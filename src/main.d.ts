@@ -1,3 +1,1 @@
-declare module '@degen/common-utils' {
-  export function main(): string;
-}
+export function main(): string;
