@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.5](https://github.com/degen-workgroup/common-utils/compare/v0.2.4...v0.2.5) (2022-03-07)
+
+
+### Bug Fixes
+
+* whitelist *.d.ts ([50a3928](https://github.com/degen-workgroup/common-utils/commit/50a3928adaee0af57a6efdbdf73fcc26cf5feebf))
+
 ### [0.2.4](https://github.com/degen-workgroup/common-utils/compare/v0.2.3...v0.2.4) (2022-03-07)
 
 
