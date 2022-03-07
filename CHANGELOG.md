@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/degen-workgroup/common-utils/compare/v0.2.0...v0.2.1) (2022-03-07)
+
+
+### Features
+
+* bump pnpm version ([db5223c](https://github.com/degen-workgroup/common-utils/commit/db5223cbe692538b739b32a2e6ba16ec5b03cd2f))
+
+
+### Bug Fixes
+
+* bump down to bump up ([516091b](https://github.com/degen-workgroup/common-utils/commit/516091baf76b9e20f157f309009c74785841d0db))
+
 ### [0.3.1](https://github.com/degen-workgroup/common-utils/compare/v0.2.0...v0.3.1) (2022-03-07)
 
 
