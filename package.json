@@ -35,6 +35,7 @@
     "@logdna/logger": "^2.6.1"
   },
   "files": [
-    "dist/**/*"
+    "dist/**/*",
+    "*/**/*.d.ts"
   ]
 }
