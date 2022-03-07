@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.4](https://github.com/degen-workgroup/common-utils/compare/v0.2.3...v0.2.4) (2022-03-07)
+
+
+### Bug Fixes
+
+* try without delcare in type ([3f47bb9](https://github.com/degen-workgroup/common-utils/commit/3f47bb9dcaf1b5eb8230489429c7d9c30b18aa76))
+
 ### [0.2.3](https://github.com/degen-workgroup/common-utils/compare/v0.2.2...v0.2.3) (2022-03-07)
 
 
