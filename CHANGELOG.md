@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/degen-workgroup/common-utils/compare/v0.2.0...v0.2.1) (2022-03-07)
+
+
+### Bug Fixes
+
+* remove extra test in script ([636feb8](https://github.com/degen-workgroup/common-utils/commit/636feb8d4eeefffe24e07d3c5efb4345873c4c7d))
+
 ## 0.2.0 (2022-03-07)
 
 
