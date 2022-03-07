@@ -7,14 +7,23 @@
   "author": "Brian <patinobrian@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "lint": "eslint . --ext .ts",
     "build": "tsc -p tsconfig.json",
     "test": "jest",
+    "prestart": "pnpm install && pnpm lint && pnpm build",
     "start": "node --trace-warnings dist/app.js",
-    "prepublish": "npm run build && npm run test",
-    "release": "standard-version"
+    "prepublish": "pnpm prestart && pnpm test",
+    "release": "standard-version",
+    "prepare": "husky install"
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
     "@types/jest": "~27.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0",
+    "eslint": "^8.10.0",
+    "husky": "^7.0.4",
     "jest": "~27.4.7",
     "standard-version": "^9.3.2",
     "ts-jest": "^27.1.3",
