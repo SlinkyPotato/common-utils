@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/degen-workgroup/common-utils/compare/v0.2.0...v0.2.1) (2022-03-07)
+
+
+### Bug Fixes
+
+* add commitlint ([c4ac623](https://github.com/degen-workgroup/common-utils/commit/c4ac623ec8049cbc748ec802effaa3fa751527a6))
+* add main type decleration file ([fdd73c3](https://github.com/degen-workgroup/common-utils/commit/fdd73c352051352f964313fd6749f951bf665237))
+* create __test__ folder and fix jest config ([e030dad](https://github.com/degen-workgroup/common-utils/commit/e030dad640cec8d56fb063d4639ed15966b16537))
+
 ## 0.2.0 (2022-03-07)
 
 
