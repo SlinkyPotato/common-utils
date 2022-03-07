@@ -1,3 +1,3 @@
-declare namespace main {
-  let main: string;
+declare module '@degen/common-utils' {
+  export function main(): string;
 }
