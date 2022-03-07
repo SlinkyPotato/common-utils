@@ -1,6 +1,6 @@
 {
   "name": "@degen/common-utils",
-  "version": "0.2.2",
+  "version": "0.2.1",
   "description": "NPM package containing common utilities for various node projects.",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
@@ -15,7 +15,7 @@
     "prestart": "pnpm install && pnpm lint && pnpm build",
     "start": "node --trace-warnings dist/main.js",
     "prepublish": "pnpm prestart && pnpm test",
-    "release": "standard-version",
+    "release": "pnpm test && standard-version",
     "prepare": "husky install"
   },
   "devDependencies": {
