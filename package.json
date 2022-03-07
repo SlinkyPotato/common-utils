@@ -15,6 +15,7 @@
     "prestart": "pnpm install && pnpm lint && pnpm build",
     "start": "node --trace-warnings dist/main.js",
     "prepublish": "pnpm prestart && pnpm test",
+    "postpublish": "git push --follow-tags origin main && npm publish",
     "release": "pnpm test && standard-version",
     "prepare": "husky install"
   },
