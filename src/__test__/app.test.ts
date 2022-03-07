@@ -1,5 +1,5 @@
-import app from '../app';
+import main from '../main';
 
 test('console output of app', () => {
-  expect(app()).toBe('hello package!');
+  expect(main()).toBe('hello package!');
 });
