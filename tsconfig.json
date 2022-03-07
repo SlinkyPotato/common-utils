@@ -1,24 +1,35 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "target": "es6",
-        "lib": [
-            "es2020",
-            "dom"
-        ],
-        "sourceMap": true,
-        "outDir": "./dist/",
-        "allowJs": true,
-        "allowSyntheticDefaultImports": true,
-        "esModuleInterop": true,
-        "noEmitOnError": true,
-        "moduleResolution": "node",
-        "resolveJsonModule": true,
-        "strict": true,
-        "inlineSources": true,
-        "sourceRoot": "/",
-        "experimentalDecorators": true,
-    },
-    "include": ["src/**/*.ts"],
-    "exclude": ["node_modules"]
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "lib": [
+        "es2020",
+        "dom"
+    ],
+    "sourceMap": true,
+    "outDir": "./dist/",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "noEmitOnError": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "strict": true,
+    "inlineSources": true,
+    "sourceRoot": "/",
+    "experimentalDecorators": true,
+    "types": [
+      "node",
+      "jest"
+    ]
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.test.*",
+    "**/__mocks__/*",
+    "**/__tests__/*"
+  ],
 }

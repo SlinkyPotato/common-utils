@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "eslint . --ext .ts",
     "build": "tsc -p tsconfig.json",
-    "test": "jest",
+    "test": "jest --config jest.config.js",
     "prestart": "pnpm install && pnpm lint && pnpm build",
     "start": "node --trace-warnings dist/app.js",
     "prepublish": "pnpm prestart && pnpm test",
@@ -31,5 +31,8 @@
   },
   "dependencies": {
     "@logdna/logger": "^2.6.1"
-  }
+  },
+  "files": [
+    "dist/**/*"
+  ]
 }
