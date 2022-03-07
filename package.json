@@ -10,7 +10,7 @@
     "build": "tsc -p tsconfig.json",
     "test": "jest",
     "start": "node --trace-warnings dist/app.js",
-    "prepublish": "test test && yarn build",
+    "prepublish": "test && yarn build",
     "release": "standard-version"
   },
   "devDependencies": {
