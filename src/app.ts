@@ -3,4 +3,3 @@ const app = () => {
 };
 
 export default app;
-app();
