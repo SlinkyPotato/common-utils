@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/degen-workgroup/common-utils/compare/v0.2.2...v0.2.3) (2022-03-07)
+
+
+### Bug Fixes
+
+* try a new type definition and update eslint config ([a91e5b2](https://github.com/degen-workgroup/common-utils/commit/a91e5b2f5c47ff3b825e89959c5688b72cbacb51))
+
 ### [0.2.2](https://github.com/degen-workgroup/common-utils/compare/v0.2.1...v0.2.2) (2022-03-07)
 
 
