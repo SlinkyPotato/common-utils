@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/degen-workgroup/common-utils/compare/v0.2.1...v0.2.2) (2022-03-07)
+
+
+### Bug Fixes
+
+* add husky hook for git push ([4301ac3](https://github.com/degen-workgroup/common-utils/commit/4301ac32064121c8bd23e66137b813b928cda3ff))
+* add pnpm test before release ([0351039](https://github.com/degen-workgroup/common-utils/commit/0351039683545a1e44eea3956828e6eb68cbd50b))
 
 ### [0.2.1](https://github.com/degen-workgroup/common-utils/compare/v0.2.0...v0.2.1) (2022-03-07)
 
