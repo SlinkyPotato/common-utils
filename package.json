@@ -1,0 +1,20 @@
+{
+  "name": "@degen/common-utils",
+  "version": "0.1.0",
+  "description": "NPM package containing common utilities for various node projects.",
+  "main": "app.ts",
+  "repository": "git@github.com:degen-workgroup/common-utils.git",
+  "author": "Brian <patinobrian@gmail.com>",
+  "license": "MIT",
+  "packageManager": "yarn@3.2.0",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node --trace-warnings dist/app.js"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.2"
+  },
+  "dependencies": {
+    "@logdna/logger": "^2.6.1"
+  }
+}
