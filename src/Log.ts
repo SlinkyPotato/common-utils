@@ -117,7 +117,7 @@ const Log = {
         // eslint-disable-next-line no-console
         console.log(statement);
       }
-      logger.log(statement, options);
+      logger.log(statement);
     } catch (e) {
       // eslint-disable-next-line no-console
       console.error(e);
