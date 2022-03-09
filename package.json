@@ -7,6 +7,9 @@
   "repository": "git@github.com:degen-workgroup/common-utils.git",
   "author": "Brian <patinobrian@gmail.com>",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "lint": "eslint . --ext .ts",
     "format": "eslint . --ext .ts --fix",
@@ -16,8 +19,7 @@
     "start": "node --trace-warnings dist/main.js",
     "prepublish": "pnpm prestart && pnpm test",
     "postpublish": "git push --follow-tags origin main && npm publish",
-    "release": "pnpm test && standard-version",
-    "prepare": "husky install"
+    "release": "pnpm test && standard-version"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.1",
