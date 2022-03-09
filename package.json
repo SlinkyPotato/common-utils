@@ -14,7 +14,7 @@
     "lint": "eslint . --ext .ts",
     "format": "eslint . --ext .ts --fix",
     "build": "tsc -p tsconfig.json",
-    "test": "jest --config jest.config.js",
+    "test": "jest --config jest.config.js --forceExit",
     "prestart": "pnpm install && pnpm lint && pnpm build",
     "start": "node --trace-warnings dist/main.js",
     "prepublish": "pnpm prestart && pnpm test",

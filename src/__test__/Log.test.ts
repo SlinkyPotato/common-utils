@@ -1,18 +1,48 @@
 import Log from '../Log';
-import logdna from '@logdna/logger';
+import logdna, { ConstructorOptions, Logger, LogOptions } from '@logdna/logger';
 
 describe('Common Log ', () => {
+  let logdnaSpy: jest.SpyInstance;
   
   beforeAll(() => {
-    // const logdnaSpy = jest.spyOn(logdna, 'createLogger');
-    // const logdnaMock = jest.createMockFromModule('@logdna/logger');
-    // logdnaSpy.mockImplementation((_: string, __?: ConstructorOptions ) => {
-    //   return {} as Logger;
-    // });
+    logdnaSpy = jest.spyOn(logdna, 'createLogger');
+    logdnaSpy.mockImplementation((logToken: string, opts?: ConstructorOptions ) => {
+      console.log(`logToken: ${logToken}`);
+      console.log(opts);
+      return {
+        log: (statement: string | object) => {
+          console.log(statement);
+        },
+        info(statement: string | object) {
+          console.log(statement);
+        },
+        warn(statement: string | object) {
+          console.log(statement);
+        },
+        debug(statement: string | object) {
+          console.log(statement);
+        },
+        error(statement: string | object, options?: Omit<LogOptions, 'level'>) {
+          console.log(statement);
+          console.log(options);
+        },
+        fatal(statement: string | object) {
+          console.log(statement);
+        },
+        trace(statement: string | object) {
+          console.log(statement);
+        },
+        addMetaProperty(key: string, value: unknown) {
+          console.log(key + value);
+        },
+        flush() {
+          console.log('flushed');
+        },
+      } as Logger;
+    });
   });
   
   afterAll(() => {
-    const logdnaSpy = jest.spyOn(logdna, 'createLogger');
     logdnaSpy.mockRestore();
   });
   
