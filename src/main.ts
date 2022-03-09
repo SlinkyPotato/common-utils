@@ -1,6 +1,3 @@
-const main = (): string => {
-  console.log('hello package!');
-  return 'hello package!';
-};
-
-export default main;
+export * from './Log';
+export * from './LogUtils';
+export * from './SentryUtils';

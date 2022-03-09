@@ -19,21 +19,31 @@
       "@typescript-eslint"
   ],
   "rules": {
-      "indent": [
-          "error",
-          2
-      ],
-      "linebreak-style": [
-          "error",
-          "unix"
-      ],
-      "quotes": [
-          "error",
-          "single"
-      ],
-      "semi": [
-          "error",
-          "always"
-      ]
+    "@typescript-eslint/no-var-requires": 0,
+    "brace-style": ["error", "1tbs", {
+      "allowSingleLine": true
+    }],
+    "comma-dangle": ["error", "always-multiline"],
+    "comma-spacing": "error",
+    "comma-style": "error",
+    "curly": ["error", "multi-line", "consistent"],
+    "dot-location": ["error", "property"],
+    "indent": [
+        "error",
+        2
+    ],
+    "linebreak-style": [
+        "error",
+        "unix"
+    ],
+    "quotes": [
+        "error",
+        "single"
+    ],
+    "semi": [
+        "error",
+        "always"
+    ],
+    "eol-last": ["error", "always"]
   }
 }

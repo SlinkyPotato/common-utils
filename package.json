@@ -33,7 +33,11 @@
     "typescript": "^4.6.2"
   },
   "dependencies": {
-    "@logdna/logger": "^2.6.1"
+    "@logdna/logger": "^2.6.1",
+    "@sentry/integrations": "^6.18.2",
+    "@sentry/node": "^6.18.2",
+    "@sentry/tracing": "^6.18.2",
+    "slash-create": "^5.3.0"
   },
   "files": [
     "dist/**/*"
