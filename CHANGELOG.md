@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.1](https://github.com/degen-workgroup/common-utils/compare/v0.3.0...v0.3.1) (2022-03-09)
+
+
+### Bug Fixes
+
+* add github action ([a64ae64](https://github.com/degen-workgroup/common-utils/commit/a64ae6454e5393f562b1911ff239bdd2af1a0028))
+* Log.log command ([90abd71](https://github.com/degen-workgroup/common-utils/commit/90abd71a9f46b6c62030ff6fe5e4218d1e20f282))
+
 ## 0.3.0 (2022-03-07)
 
 
