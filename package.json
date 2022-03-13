@@ -5,7 +5,7 @@
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
   "repository": "git@github.com:degen-workgroup/common-utils.git",
-  "author": "Brian <patinobrian@gmail.com>",
+  "author": "Brian Patino <patinobrian@gmail.com>",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
