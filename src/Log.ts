@@ -1,21 +1,22 @@
 import logdna, { Logger, LogOptions } from '@logdna/logger';
 import constants from './constants';
 
-let logger: Logger;
-if (!constants.logDNAToken) {
-  throw new Error('Please set logdna token');
-}
+let logger: Logger | null;
 
 try {
-  logger = logdna.createLogger(constants.logDNAToken, {
-    app: constants.logDNAAppName,
-    level: constants.logDNADefault,
-  });
-  if (constants.env != 'production' || !logger.info) {
-    // eslint-disable-next-line no-console
-    console.log('Logger initialized!');
+  if (constants.logDNAToken) {
+    logger = logdna.createLogger(constants.logDNAToken, {
+      app: constants.logDNAAppName,
+      level: constants.logDNADefault,
+    });
+    if (constants.env != 'production' || !logger.info) {
+      // eslint-disable-next-line no-console
+      console.log('Logger initialized!');
+    } else {
+      logger.log('Logger initialized!');
+    }
   } else {
-    logger.log('Logger initialized!');
+    logger = null;
   }
 } catch (e) {
   // eslint-disable-next-line no-console
@@ -29,7 +30,7 @@ const Log = {
   
   info(statement: string | object, options?: Omit<LogOptions, 'level'>): void {
     try {
-      if (constants.env != 'production' || !logger.info) {
+      if (constants.env != 'production' || !logger || !logger.info) {
         // eslint-disable-next-line no-console
         console.log(statement);
       } else {
@@ -43,7 +44,7 @@ const Log = {
   
   warn(statement: string | object, options?: Omit<LogOptions, 'level'>): void {
     try {
-      if (constants.env != 'production' || !logger.warn) {
+      if (constants.env != 'production' || !logger || !logger.warn) {
         // eslint-disable-next-line no-console
         console.warn(statement);
       } else {
@@ -57,7 +58,7 @@ const Log = {
   
   debug(statement: string | object, options?: Omit<LogOptions, 'level'>): void {
     try {
-      if (constants.env != 'production' || !logger.debug) {
+      if (constants.env != 'production' || !logger || !logger.debug) {
         // eslint-disable-next-line no-console
         console.debug(statement);
       } else {
@@ -71,7 +72,7 @@ const Log = {
   
   error(statement: string | object, options?: Omit<LogOptions, 'level'>): void {
     try {
-      if (constants.env != 'production' || !logger.error) {
+      if (constants.env != 'production' || !logger || !logger.error) {
         // eslint-disable-next-line no-console
         console.error(statement);
       } else {
@@ -85,7 +86,7 @@ const Log = {
   
   fatal(statement: string | object, options?: Omit<LogOptions, 'level'>): void {
     try {
-      if (constants.env != 'production' || !logger.fatal) {
+      if (constants.env != 'production' || !logger || !logger.fatal) {
         // eslint-disable-next-line no-console
         console.error(statement);
       } else {
@@ -99,7 +100,7 @@ const Log = {
   
   trace(statement: string | object, options?: Omit<LogOptions, 'level'>): void {
     try {
-      if (constants.env != 'production' || !logger.trace) {
+      if (constants.env != 'production' || !logger || !logger.trace) {
         // eslint-disable-next-line no-console
         console.log(statement);
       } else {
@@ -113,11 +114,12 @@ const Log = {
   
   log(statement: string | object, options?: Omit<LogOptions, 'level'>): void {
     try {
-      if (constants.env != 'production') {
+      if (constants.env != 'production' || !logger) {
         // eslint-disable-next-line no-console
         console.log(statement);
+      } else {
+        logger.log(statement, options);
       }
-      logger.log(statement, options);
     } catch (e) {
       // eslint-disable-next-line no-console
       console.error(e);
@@ -126,7 +128,9 @@ const Log = {
   
   addMetaProperty(key: string, value: string | number | boolean | object): void {
     try {
-      logger.addMetaProperty(key, value);
+      if (logger) {
+        logger.addMetaProperty(key, value);
+      }
     } catch (e) {
       // eslint-disable-next-line no-console
       console.error(e);
@@ -135,7 +139,9 @@ const Log = {
   
   removeMetaProperty(key: string): void {
     try {
-      logger.removeMetaProperty(key);
+      if (logger) {
+        logger.removeMetaProperty(key);
+      }
     } catch (e) {
       // eslint-disable-next-line no-console
       console.error(e);
@@ -144,7 +150,9 @@ const Log = {
   
   flush(): void {
     try {
-      logger.flush();
+      if (logger) {
+        logger.flush();
+      }
     } catch(e) {
       // eslint-disable-next-line no-console
       console.error(e);
