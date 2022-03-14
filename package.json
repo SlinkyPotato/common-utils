@@ -19,19 +19,6 @@
     "start": "node --trace-warnings dist/main.js",
     "release": "pnpm test && standard-version"
   },
-  "devDependencies": {
-    "@commitlint/cli": "^16.2.1",
-    "@commitlint/config-conventional": "^16.2.1",
-    "@types/jest": "~27.4.1",
-    "@typescript-eslint/eslint-plugin": "^5.14.0",
-    "@typescript-eslint/parser": "^5.14.0",
-    "eslint": "^8.10.0",
-    "husky": "^7.0.4",
-    "jest": "~27.4.7",
-    "standard-version": "^9.3.2",
-    "ts-jest": "^27.1.3",
-    "typescript": "^4.6.2"
-  },
   "dependencies": {
     "@logdna/logger": "^2.6.1",
     "@sentry/integrations": "^6.18.2",
@@ -39,6 +26,21 @@
     "@sentry/tracing": "^6.18.2",
     "discord.js": "^13.6.0",
     "slash-create": "^5.3.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@types/jest": "~27.4.1",
+    "@types/validator": "^13.7.1",
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0",
+    "class-validator": "^0.13.2",
+    "eslint": "^8.10.0",
+    "husky": "^7.0.4",
+    "jest": "~27.4.7",
+    "standard-version": "^9.3.2",
+    "ts-jest": "^27.1.3",
+    "typescript": "^4.6.2"
   },
   "files": [
     "dist/**/*"
