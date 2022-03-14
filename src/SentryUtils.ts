@@ -1,4 +1,5 @@
 import * as Sentry from '@sentry/node';
+import * as SentryTracing from '@sentry/tracing';
 import { RewriteFrames } from '@sentry/integrations';
 import constants from './constants';
 import LogUtils from './LogUtils';
@@ -10,6 +11,9 @@ import {
 import {
   Message,
 } from 'discord.js';
+
+// Required to solve https://github.com/getsentry/sentry-javascript/issues/2984
+SentryTracing.addExtensionMethods();
 
 const SentryUtils = {
   init: (appName: string, appVersion: string) => {
@@ -45,7 +49,6 @@ export function command(target: SlashCommand, propertyKey: string, descriptor: P
       op: 'command',
       name: ctx.commandName,
     });
-    Log.log(transaction);
     
     Sentry.configureScope(async scope => {
       scope.setTransactionName(`/${ctx.commandName} ${ctx.subcommands[0]}`);
