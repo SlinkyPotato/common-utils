@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.2](https://github.com/degen-workgroup/common-utils/compare/v0.4.1...v0.4.2) (2022-03-15)
+
+
+### Bug Fixes
+
+* adjust husky hooks ([9304f82](https://github.com/degen-workgroup/common-utils/commit/9304f829f3535b0c8be155ef33f63988deb430ca))
+* adjust jest.config ([bafab83](https://github.com/degen-workgroup/common-utils/commit/bafab832066aa757e99be6fa580c8844de7d7be4))
+* all husky hooks ([0cef50a](https://github.com/degen-workgroup/common-utils/commit/0cef50a439a6791635e343ff662156514398cf71))
+
 ### [0.4.1](https://github.com/degen-workgroup/common-utils/compare/v0.3.4...v0.4.1) (2022-03-15)
 
 

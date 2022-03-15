@@ -1,6 +1,6 @@
 {
   "name": "@degen/common-utils",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "NPM package containing common utilities for various node projects.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -17,7 +17,7 @@
     "test": "jest --config jest.config.js --forceExit",
     "prestart": "pnpm install && pnpm lint && pnpm build",
     "start": "node --trace-warnings dist/main.js",
-    "release": "pnpm prestart && standard-version"
+    "release": "pnpm prestart && pnpm test && standard-version"
   },
   "dependencies": {
     "@logdna/logger": "^2.6.1",
