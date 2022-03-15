@@ -17,7 +17,7 @@
     "test": "jest --config jest.config.js --forceExit",
     "prestart": "pnpm install && pnpm lint && pnpm build",
     "start": "node --trace-warnings dist/main.js",
-    "release": "pnpm test && standard-version"
+    "release": "pnpm prestart && standard-version"
   },
   "dependencies": {
     "@logdna/logger": "^2.6.1",

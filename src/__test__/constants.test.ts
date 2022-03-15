@@ -1,25 +1,25 @@
-import constants from '../constants';
+import EnvConstants from '../EnvConstants';
 
 
 describe('environment variables', () => {
   
   test('constants.env', () => {
-    expect(constants.env).toBe('jest');
+    expect(EnvConstants.APP_ENV).toBe('jest');
   });
   
   test('constants.logDNAToken', () => {
-    expect(constants.logDNAToken).toBe('logDNAToken');
+    expect(EnvConstants.LOG_DNA_TOKEN).toBe('logDNAToken');
   });
   
   test('constants.logDNAAppName', () => {
-    expect(constants.logDNAAppName).toBe('logDNAAppName');
+    expect(EnvConstants.LOG_DNA_APP_NAME).toBe('logDNAAppName');
   });
   
   test('constants.logDNADefault', () => {
-    expect(constants.logDNADefault).toBe('DEBUG');
+    expect(EnvConstants.LOG_DNA_DEFAULT).toBe('DEBUG');
   });
   
   test('constants.sentryDSN', () => {
-    expect(constants.sentryDSN).toBe('sentryDSN');
+    expect(EnvConstants.SENTRY_IO_DSN).toBe('sentryDSN');
   });
 });
