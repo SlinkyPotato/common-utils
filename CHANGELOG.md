@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.1](https://github.com/degen-workgroup/common-utils/compare/v0.3.4...v0.4.1) (2022-03-15)
+
+
+### Features
+
+* add additional sentry utils ([e27120e](https://github.com/degen-workgroup/common-utils/commit/e27120e6f5ad55fa97decb28f5417dda8ea84d10))
+
+
+### Bug Fixes
+
+* add EnvConstants ([319c575](https://github.com/degen-workgroup/common-utils/commit/319c575fba7bca9b42cbd00b19a28e8ec33b7474))
+* adjust Validate import ([5514637](https://github.com/degen-workgroup/common-utils/commit/55146370e0259d4a27d5f3dd7173ce1a584c7d06))
+* import utils into index ([e91b1dc](https://github.com/degen-workgroup/common-utils/commit/e91b1dcdd618758c586c658420e7e73cdce38997))
+* prepare 0.4.0 release ([c04238f](https://github.com/degen-workgroup/common-utils/commit/c04238faefcb57298572761885de74dd4119dead))
+
 ## [0.4.0](https://github.com/degen-workgroup/common-utils/compare/v0.3.3...v0.4.0) (2022-03-14)
 
 
