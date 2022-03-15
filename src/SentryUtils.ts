@@ -1,7 +1,6 @@
 import * as Sentry from '@sentry/node';
 import * as SentryTracing from '@sentry/tracing';
 import { RewriteFrames } from '@sentry/integrations';
-import constants from './constants';
 import LogUtils from './LogUtils';
 import Log from './Log';
 import {
@@ -11,6 +10,7 @@ import {
 import {
   Message,
 } from 'discord.js';
+import EnvConstants from './EnvConstants';
 
 // Required to solve https://github.com/getsentry/sentry-javascript/issues/2984
 SentryTracing.addExtensionMethods();
@@ -19,10 +19,10 @@ const SentryUtils = {
   init: (appName: string, appVersion: string) => {
     try {
       Sentry.init({
-        dsn: `${constants.sentryDSN}`,
+        dsn: `${EnvConstants.SENTRY_IO_DSN}`,
         tracesSampleRate: 1.0,
         release: `${appName}@${appVersion}`,
-        environment: `${process.env.SENTRY_ENVIRONMENT}`,
+        environment: `${EnvConstants.APP_ENV}`,
         integrations: [
           new RewriteFrames({
             root: __dirname,

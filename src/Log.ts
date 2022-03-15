@@ -1,15 +1,15 @@
 import logdna, { Logger, LogOptions } from '@logdna/logger';
-import constants from './constants';
+import EnvConstants from './EnvConstants';
 
 let logger: Logger | null;
 
 try {
-  if (constants.logDNAToken) {
-    logger = logdna.createLogger(constants.logDNAToken, {
-      app: constants.logDNAAppName,
-      level: constants.logDNADefault,
+  if (EnvConstants.LOG_DNA_TOKEN) {
+    logger = logdna.createLogger(EnvConstants.LOG_DNA_TOKEN, {
+      app: EnvConstants.LOG_DNA_APP_NAME,
+      level: EnvConstants.LOG_DNA_DEFAULT,
     });
-    if (constants.env != 'production' || !logger.info) {
+    if (EnvConstants.APP_ENV != 'production' || !logger.info) {
       // eslint-disable-next-line no-console
       console.log('Logger initialized!');
     } else {
@@ -30,7 +30,7 @@ const Log = {
   
   info(statement: string | object, options?: Omit<LogOptions, 'level'>): void {
     try {
-      if (constants.env != 'production' || !logger || !logger.info) {
+      if (EnvConstants.APP_ENV != 'production' || !logger || !logger.info) {
         // eslint-disable-next-line no-console
         console.log(statement);
       } else {
@@ -44,7 +44,7 @@ const Log = {
   
   warn(statement: string | object, options?: Omit<LogOptions, 'level'>): void {
     try {
-      if (constants.env != 'production' || !logger || !logger.warn) {
+      if (EnvConstants.APP_ENV != 'production' || !logger || !logger.warn) {
         // eslint-disable-next-line no-console
         console.warn(statement);
       } else {
@@ -58,7 +58,7 @@ const Log = {
   
   debug(statement: string | object, options?: Omit<LogOptions, 'level'>): void {
     try {
-      if (constants.env != 'production' || !logger || !logger.debug) {
+      if (EnvConstants.APP_ENV != 'production' || !logger || !logger.debug) {
         // eslint-disable-next-line no-console
         console.debug(statement);
       } else {
@@ -72,7 +72,7 @@ const Log = {
   
   error(statement: string | object, options?: Omit<LogOptions, 'level'>): void {
     try {
-      if (constants.env != 'production' || !logger || !logger.error) {
+      if (EnvConstants.APP_ENV != 'production' || !logger || !logger.error) {
         // eslint-disable-next-line no-console
         console.error(statement);
       } else {
@@ -86,7 +86,7 @@ const Log = {
   
   fatal(statement: string | object, options?: Omit<LogOptions, 'level'>): void {
     try {
-      if (constants.env != 'production' || !logger || !logger.fatal) {
+      if (EnvConstants.APP_ENV != 'production' || !logger || !logger.fatal) {
         // eslint-disable-next-line no-console
         console.error(statement);
       } else {
@@ -100,7 +100,7 @@ const Log = {
   
   trace(statement: string | object, options?: Omit<LogOptions, 'level'>): void {
     try {
-      if (constants.env != 'production' || !logger || !logger.trace) {
+      if (EnvConstants.APP_ENV != 'production' || !logger || !logger.trace) {
         // eslint-disable-next-line no-console
         console.log(statement);
       } else {
@@ -114,7 +114,7 @@ const Log = {
   
   log(statement: string | object, options?: Omit<LogOptions, 'level'>): void {
     try {
-      if (constants.env != 'production' || !logger) {
+      if (EnvConstants.APP_ENV != 'production' || !logger) {
         // eslint-disable-next-line no-console
         console.log(statement);
       } else {

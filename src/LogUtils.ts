@@ -1,6 +1,7 @@
 import * as Sentry from '@sentry/node';
 import { CommandContext } from 'slash-create';
 import Log from './Log';
+import EnvConstants from './EnvConstants';
 
 const LogUtils = {
   logCommandStart(ctx: CommandContext): void {
@@ -50,7 +51,7 @@ const LogUtils = {
             guildId: guildId,
           },
         });
-        if (process.env.SENTRY_ENVIRONMENT == 'local') {
+        if (EnvConstants.APP_ENV == 'local') {
           // eslint-disable-next-line no-console
           console.error(error);
         }
