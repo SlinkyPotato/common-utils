@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.3](https://github.com/degen-workgroup/common-utils/compare/v0.4.2...v0.4.3) (2022-03-18)
+
+
+### Bug Fixes
+
+* poap code validation against db ([6c6e0a1](https://github.com/degen-workgroup/common-utils/commit/6c6e0a1590b915736396ae2e773ee4d8d4e78a74))
+
 ### [0.4.2](https://github.com/degen-workgroup/common-utils/compare/v0.4.1...v0.4.2) (2022-03-15)
 
 
