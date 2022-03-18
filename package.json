@@ -20,6 +20,7 @@
     "release": "pnpm prestart && pnpm test && standard-version"
   },
   "dependencies": {
+    "@degen/schema": "^0.1.6",
     "@logdna/logger": "^2.6.1",
     "@sentry/integrations": "^6.18.2",
     "@sentry/node": "^6.18.2",
