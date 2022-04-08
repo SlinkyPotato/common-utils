@@ -7,8 +7,8 @@ import { PoapEvent } from '@degen/schema';
 
 const Validate = {
   async poapCode(
-    paopEventsModel: Model<PoapEvent>, 
-    code?: string, 
+    code: string | null,
+    paopEventsModel?: Model<PoapEvent>,
     thread?: ThreadChannel,
   ): Promise<void> {
     if (code == null) {
@@ -22,13 +22,15 @@ const Validate = {
                 '- alphanumeric\n ' +
                 '- special characters: .!@#$%&,?', thread);
     }
-    const result = await paopEventsModel.findOne({
-      isActive: true,
-      'twitterEventMetadata.poapCode': code,
-    });
+    if (paopEventsModel) {
+      const result = await paopEventsModel.findOne({
+        isActive: true,
+        'twitterEventMetadata.poapCode': code,
+      });
   
-    if (result) {
-      throw new ValidationError('Please try another POAP code.', thread);
+      if (result) {
+        throw new ValidationError('Please try another POAP code.', thread);
+      }
     }
   },
 
