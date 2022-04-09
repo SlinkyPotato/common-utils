@@ -1,11 +1,16 @@
 import ValidationError from './errors/ValidationError';
+import { ThreadChannel } from 'discord.js';
 import {
-  PoapEvent,
-  PoapEventsModel,
-} from '@degen/schema';
+  Model,
+} from 'mongoose';
+import { PoapEvent } from '@degen/schema';
 
 const Validate = {
-  async poapCode(code?: string): Promise<void> {
+  async poapCode(
+    code: string | null,
+    paopEventsModel?: Model<PoapEvent>,
+    thread?: ThreadChannel,
+  ): Promise<void> {
     if (code == null) {
       return;
     }
@@ -15,26 +20,30 @@ const Validate = {
         'Please enter a POAP code: \n' +
                 '- 50 characters maximum\n ' +
                 '- alphanumeric\n ' +
-                '- special characters: .!@#$%&,?');
+                '- special characters: .!@#$%&,?', thread);
     }
-    
-    const result = await PoapEventsModel.findOne<PoapEvent>({
-      isActive: true,
-      'twitterEventMetadata.poapCode': code,
-    });
-    
-    if (result) {
-      throw new ValidationError('Please try another POAP code.');
+    if (paopEventsModel) {
+      const result = await paopEventsModel.findOne({
+        isActive: true,
+        'twitterEventMetadata.poapCode': code,
+      });
+  
+      if (result) {
+        throw new ValidationError('Please try another POAP code.', thread);
+      }
     }
   },
 
-  numberToMint(numberToMint: number): void {
+  numberToMint(numberToMint: number, thread?: ThreadChannel): void {
     if (numberToMint >= 1000 || numberToMint <= 0) {
-      throw new ValidationError('A maximum of 1000 POAPs can be minted for a single event. Please let us know if you\'d like to see this increased. ');
+      throw new ValidationError(
+        'A maximum of 1000 POAPs can be minted for a single event. Please let us know if you\'d like to see this increased.',
+        thread,
+      );
     }
   },
 
-  eventName(event?: string): void {
+  eventName(event?: string, thread?: ThreadChannel): void {
     if (event == null) {
       return;
     }
@@ -44,7 +53,7 @@ const Validate = {
         'Please enter a valid event: \n' +
           '- 250 characters maximum\n ' +
           '- alphanumeric\n ' +
-          '- special characters: .!@#$%&,?');
+          '- special characters: .!@#$%&,?', thread);
     }
   },
 };
