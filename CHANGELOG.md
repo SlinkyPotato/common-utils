@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/degen-workgroup/common-utils/compare/v0.4.3...v1.0.0) (2022-04-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* degen release
+
+### Features
+
+* add thread to ValidationError ([6aabd1d](https://github.com/degen-workgroup/common-utils/commit/6aabd1de907b99bb2cbec7b54fc0a120f22fc03f))
+* degen release ([1c5415d](https://github.com/degen-workgroup/common-utils/commit/1c5415d193565e36ac83da4795b6153a6a598ad2))
+
+
+### Bug Fixes
+
+* adjust validate ([a6d0843](https://github.com/degen-workgroup/common-utils/commit/a6d0843dcba814d8e4608a56c03437235c514ca8))
+
 ### [0.4.3](https://github.com/degen-workgroup/common-utils/compare/v0.4.2...v0.4.3) (2022-03-18)
 
 
