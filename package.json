@@ -1,6 +1,6 @@
 {
   "name": "@degen/common-utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "NPM package containing common utilities for various node projects.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -20,7 +20,7 @@
     "release": "pnpm prestart && pnpm test && standard-version"
   },
   "dependencies": {
-    "@degen/schema": "^1.0.0",
+    "@degen/schema": "^1.0.3",
     "@logdna/logger": "^2.6.1",
     "@sentry/integrations": "^6.19.6",
     "@sentry/node": "^6.19.6",
