@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@commitlint/cli': ^16.2.3
   '@commitlint/config-conventional': ^16.2.1
-  '@degen/schema': ^1.0.0
+  '@degen/schema': ^1.0.2
   '@logdna/logger': ^2.6.1
   '@sentry/integrations': ^6.19.6
   '@sentry/node': ^6.19.6
@@ -23,7 +23,7 @@ specifiers:
   typescript: ^4.6.3
 
 dependencies:
-  '@degen/schema': 1.0.0
+  '@degen/schema': 1.0.2
   '@logdna/logger': 2.6.1
   '@sentry/integrations': 6.19.6
   '@sentry/node': 6.19.6
@@ -541,10 +541,10 @@ packages:
       '@cspotcode/source-map-consumer': 0.8.0
     dev: true
 
-  /@degen/schema/1.0.0:
-    resolution: {integrity: sha512-zSQwyxpSlNI5+/52rR6NbOtwlkspWEzmU1M0bNFMFF2rNK6o3q/1PpxhLKz1x2mVo4vNbcRwNpeTD7AjENo3hA==}
+  /@degen/schema/1.0.2:
+    resolution: {integrity: sha512-fDp196acjTCaJCzF4icepTzatb6NpMZqKRs5y8TKh0UNeZr5QkJUKJgsnmMg2gSXpBL5SyBMu0t8mgaF9HaMZw==}
     dependencies:
-      mongoose: 6.2.10
+      mongoose: 6.3.1
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -1517,8 +1517,8 @@ packages:
       node-int64: 0.4.0
     dev: true
 
-  /bson/4.6.2:
-    resolution: {integrity: sha512-VeJKHShcu1b/ugl0QiujlVuBepab714X9nNyBdA1kfekuDGecxgpTA2Z6nYbagrWFeiIyzSWIOzju3lhj+RNyQ==}
+  /bson/4.6.3:
+    resolution: {integrity: sha512-rAqP5hcUVJhXP2MCSNVsf0oM2OGU1So6A9pVRDYayvJ5+hygXHQApf87wd5NlhPM1J9RJnbqxIG/f8QTzRoQ4A==}
     engines: {node: '>=6.9.0'}
     dependencies:
       buffer: 5.7.1
@@ -3659,11 +3659,11 @@ packages:
       whatwg-url: 11.0.0
     dev: false
 
-  /mongodb/4.3.1:
-    resolution: {integrity: sha512-sNa8APSIk+r4x31ZwctKjuPSaeKuvUeNb/fu/3B6dRM02HpEgig7hTHM8A/PJQTlxuC/KFWlDlQjhsk/S43tBg==}
+  /mongodb/4.5.0:
+    resolution: {integrity: sha512-A2l8MjEpKojnhbCM0MK3+UOGUSGvTNNSv7AkP1fsT7tkambrkkqN/5F2y+PhzsV0Nbv58u04TETpkaSEdI2zKA==}
     engines: {node: '>=12.9.0'}
     dependencies:
-      bson: 4.6.2
+      bson: 4.6.3
       denque: 2.0.1
       mongodb-connection-string-url: 2.5.2
       socks: 2.6.2
@@ -3671,13 +3671,13 @@ packages:
       saslprep: 1.0.3
     dev: false
 
-  /mongoose/6.2.10:
-    resolution: {integrity: sha512-Yp+6UH5M0AlxAVGdC2/Deq0St+2qW73oKCnhJDr83bOZ12eflTLTT5uQF0p6KzvtFj86XWbq/7ApvO4yW6h1sA==}
+  /mongoose/6.3.1:
+    resolution: {integrity: sha512-bknh/VzU/7mBudfE4/5N7NR2Bpjvuxl93iePvyCGLhjeHF6w+mCRmucYGQkG6wEbCmEUVmBQrcgr2b40krMo/Q==}
     engines: {node: '>=12.0.0'}
     dependencies:
-      bson: 4.6.2
+      bson: 4.6.3
       kareem: 2.3.5
-      mongodb: 4.3.1
+      mongodb: 4.5.0
       mpath: 0.8.4
       mquery: 4.0.2
       ms: 2.1.3
