@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.2](https://github.com/degen-workgroup/common-utils/compare/v1.0.1...v1.0.2) (2022-05-10)
+
+
+### Bug Fixes
+
+* bump @degen/schema ([98488c9](https://github.com/degen-workgroup/common-utils/commit/98488c9e336892f986fe04abe0489db28c406046))
+
 ### [1.0.1](https://github.com/degen-workgroup/common-utils/compare/v1.0.0...v1.0.1) (2022-04-26)
 
 
