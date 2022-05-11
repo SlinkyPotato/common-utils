@@ -6,7 +6,7 @@ import EnvConstants from './EnvConstants';
 const LogUtils = {
   logCommandStart(ctx: CommandContext): void {
     try {
-      Log.info(`/${ctx.commandName} ${ctx.options[0]} ran ${ctx.user.username}#${ctx.user.discriminator}`, {
+      Log.info(`/${ctx.commandName} ${ctx.subcommands[0]} ran ${ctx.user.username}#${ctx.user.discriminator}`, {
         indexMeta: true,
         meta: {
           guildId: ctx.guildID,
