@@ -6,7 +6,7 @@ import EnvConstants from './EnvConstants';
 const LogUtils = {
   logCommandStart(ctx: CommandContext): void {
     try {
-      Log.info(`/${ctx.commandName} ${ctx.options[0]} ran ${ctx.user.username}#${ctx.user.discriminator}`, {
+      Log.info(`/${ctx.commandName} ${ctx.subcommands[0]} ran ${ctx.user.username}#${ctx.user.discriminator}, discordUserId: ${ctx.user.id}`, {
         indexMeta: true,
         meta: {
           guildId: ctx.guildID,
@@ -23,7 +23,7 @@ const LogUtils = {
   
   logCommandEnd(ctx: CommandContext): void {
     try {
-      Log.info(`/${ctx.commandName} ${ctx.options[0]} ended ${ctx.user.username}#${ctx.user.discriminator}`, {
+      Log.info(`/${ctx.commandName} ${ctx.subcommands[0]} ended ${ctx.user.username}#${ctx.user.discriminator}, discordUserId: ${ctx.user.id}`, {
         indexMeta: true,
         meta: {
           guildId: ctx.guildID,
@@ -53,6 +53,7 @@ const LogUtils = {
         });
         if (EnvConstants.APP_ENV == 'local') {
           // eslint-disable-next-line no-console
+          console.log(message);
           console.error(error);
         }
       } else {

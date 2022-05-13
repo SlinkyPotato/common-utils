@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/degen-workgroup/common-utils/compare/v1.0.2...v1.1.0) (2022-05-13)
+
+
+### Bug Fixes
+
+* adjust slash msgs ([4f5301a](https://github.com/degen-workgroup/common-utils/commit/4f5301a9251b46a88aad438d4089cdb6b855c401))
+* print subcommand ([c61fa9a](https://github.com/degen-workgroup/common-utils/commit/c61fa9a21bec68ad26f2393e6a4b929c80fce6c1))
+
 ### [1.0.2](https://github.com/degen-workgroup/common-utils/compare/v1.0.1...v1.0.2) (2022-05-10)
 
 
