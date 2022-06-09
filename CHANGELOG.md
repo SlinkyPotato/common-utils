@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.1](https://github.com/degen-workgroup/common-utils/compare/v1.2.0...v1.2.1) (2022-06-09)
+
+### Bug Fixes
+
+* update deps ([ae5d82b](https://github.com/degen-workgroup/common-utils/commit/ae5d82becc07a8cc7dae3bd616cf3d678d707d3b))
+* update discord.js ([24369c3](https://github.com/degen-workgroup/common-utils/commit/24369c38809d56f7229a9c3c7fd008327d43a26e))
+* upgrade slash-create ([3613dd5](https://github.com/degen-workgroup/common-utils/commit/3613dd5bddd244c8f330f4b7f28b0adc16c73dd4))
+
 ## [1.2.0](https://github.com/degen-workgroup/common-utils/compare/v1.1.0...v1.2.0) (2022-05-31)
 
 
