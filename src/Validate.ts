@@ -1,14 +1,17 @@
 import ValidationError from './errors/ValidationError';
 import { ThreadChannel } from 'discord.js';
-import {
-  Model,
-} from 'mongoose';
-import { PoapEvent } from '@degen/schema';
 
 const Validate = {
+  /**
+   * Validate the POAP code value
+   * @param code string that represents the poap code
+   * @param paopEventsModel Model<PoapEvent> type from @degen/schema
+   * @param thread The thread channel for the command execution
+   */
   async poapCode(
     code: string | null,
-    paopEventsModel?: Model<PoapEvent>,
+    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+    paopEventsModel?: any,
     thread?: ThreadChannel,
   ): Promise<void> {
     if (code == null) {
