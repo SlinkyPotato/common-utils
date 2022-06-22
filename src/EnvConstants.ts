@@ -14,14 +14,10 @@ class EnvConstants {
     @IsString()
     LOG_DNA_DEFAULT: string;
     
-    @IsString()
-    SENTRY_IO_DSN: string;
-    
     constructor(config: EnvConstantsType) {
       this.APP_ENV = config.APP_ENV;
       this.LOG_DNA_APP_NAME = config.LOG_DNA_APP_NAME;
       this.LOG_DNA_TOKEN = config.LOG_DNA_TOKEN;
-      this.SENTRY_IO_DSN = config.SENTRY_IO_DSN;
       this.LOG_DNA_DEFAULT = config.LOG_DNA_DEFAULT ?? 'info';
       
       const errors = validateSync(this);
@@ -40,7 +36,6 @@ export default new EnvConstants({
   LOG_DNA_APP_NAME: process.env.LOG_DNA_APP_NAME,
   LOG_DNA_TOKEN: process.env.LOG_DNA_TOKEN,
   LOG_DNA_DEFAULT: process.env.LOG_DNA_DEFAULT,
-  SENTRY_IO_DSN: process.env.SENTRY_IO_DSN,
 } as EnvConstantsType);
 
 type EnvConstantsType = {
@@ -48,5 +43,4 @@ type EnvConstantsType = {
     LOG_DNA_APP_NAME: string;
     LOG_DNA_TOKEN: string;
     LOG_DNA_DEFAULT: string;
-    SENTRY_IO_DSN: string;
 }

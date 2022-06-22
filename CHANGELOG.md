@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.1-thin](https://github.com/degen-workgroup/common-utils/compare/v1.2.0...v1.3.1-thin) (2022-06-22)
+
+
+### Features
+
+* remove @degen/schema dependency ([3e916a6](https://github.com/degen-workgroup/common-utils/commit/3e916a68a2bcb6ef014392e4a5a8d94597b46e00))
+
+
+### Bug Fixes
+
+* add release/1.3.1-thin to publish action ([6582cf0](https://github.com/degen-workgroup/common-utils/commit/6582cf08921208fae2dd80bab9e3a6ab74289403))
+* remove sentry ([af18c3a](https://github.com/degen-workgroup/common-utils/commit/af18c3aab3b62ac5d2743dcb2767c4bc5e117377))
+* update deps ([ae5d82b](https://github.com/degen-workgroup/common-utils/commit/ae5d82becc07a8cc7dae3bd616cf3d678d707d3b))
+
 ## [1.2.1](https://github.com/degen-workgroup/common-utils/compare/v1.2.0...v1.2.1) (2022-06-09)
 
 ### Bug Fixes

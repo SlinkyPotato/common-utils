@@ -1,4 +1,3 @@
-import * as Sentry from '@sentry/node';
 import { CommandContext } from 'slash-create';
 import Log from './Log';
 import EnvConstants from './EnvConstants';
@@ -41,7 +40,6 @@ const LogUtils = {
   logError(message: string, error: Error | unknown, guildId?: string): void {
     try {
       if (error != null && error instanceof Error) {
-        Sentry.captureException(error);
         Log.error(message, {
           indexMeta: true,
           meta: {
