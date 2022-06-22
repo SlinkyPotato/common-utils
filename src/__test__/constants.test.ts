@@ -19,7 +19,4 @@ describe('environment variables', () => {
     expect(EnvConstants.LOG_DNA_DEFAULT).toBe('DEBUG');
   });
   
-  test('constants.sentryDSN', () => {
-    expect(EnvConstants.SENTRY_IO_DSN).toBe('sentryDSN');
-  });
 });
