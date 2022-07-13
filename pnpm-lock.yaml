@@ -3,7 +3,6 @@ lockfileVersion: 5.4
 specifiers:
   '@commitlint/cli': ^16.2.3
   '@commitlint/config-conventional': ^16.2.1
-  '@degen/schema': 1.2.1
   '@logdna/logger': ^2.6.4
   '@sentry/integrations': ^6.19.7
   '@sentry/node': ^6.19.7
@@ -24,7 +23,6 @@ specifiers:
   typescript: ^4.6.3
 
 dependencies:
-  '@degen/schema': link:../degen-schema
   '@logdna/logger': 2.6.4
   '@sentry/integrations': 6.19.7
   '@sentry/node': 6.19.7
