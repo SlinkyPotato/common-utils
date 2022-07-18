@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.1](https://github.com/degen-workgroup/common-utils/compare/v1.3.0...v1.3.1) (2022-07-18)
+
+
+### Features
+
+* remove @degen/schema dependency ([3e916a6](https://github.com/degen-workgroup/common-utils/commit/3e916a68a2bcb6ef014392e4a5a8d94597b46e00))
+* upgrade logdna + sentry ([ce42330](https://github.com/degen-workgroup/common-utils/commit/ce423309375b8ef14de4805b01bca7b993b2a6b3))
+
 ## [1.3.1](https://github.com/degen-workgroup/common-utils/compare/v1.3.0...v1.4.0) (2022-07-18)
 
 
