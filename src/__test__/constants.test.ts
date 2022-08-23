@@ -19,6 +19,10 @@ describe('environment variables', () => {
     expect(EnvConstants.GRAYLOG_ADAPTER_NAME).toBe('udp');
   });
   
+  test('constants.GRAYLOG_APP_NAME', () => {
+    expect(EnvConstants.GRAYLOG_APP_NAME).toBe('common-utils');
+  });
+  
   test('constants.sentryDSN', () => {
     expect(EnvConstants.SENTRY_IO_DSN).toBe('sentryDSN');
   });

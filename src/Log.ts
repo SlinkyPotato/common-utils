@@ -8,6 +8,9 @@ import log, {
 try {
   if (EnvConstants.GRAYLOG_HOST) {
     log.setConfig({
+      fields: {
+        app: EnvConstants.APP_ENV,
+      },
       adapterName: EnvConstants.GRAYLOG_ADAPTER_NAME,
       adapterOptions: {
         host: EnvConstants.GRAYLOG_HOST,
