@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
     - remove logdna
     - upgrade sentry
     - upgrade dev deps
+2. Fix console.log (RC2)
 
 ## [1.3.1](https://github.com/degen-workgroup/common-utils/compare/v1.3.0...v1.3.1) (2022-07-18)
 
