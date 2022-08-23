@@ -10,7 +10,8 @@ All notable changes to this project will be documented in this file.
     - upgrade dev deps
 2. Fix console.log (RC2)
 3. Add console statements to Log.ts (RC3)
-4. Add comments to Log methods
+4. Add comments to Log methods (RC4)
+5. Add GRAYLOG_APP_NAME (RC5)
 
 ## [1.3.1](https://github.com/degen-workgroup/common-utils/compare/v1.3.0...v1.3.1) (2022-07-18)
 
