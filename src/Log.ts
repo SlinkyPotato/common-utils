@@ -30,12 +30,12 @@ try {
 
 const Log = {
   
-  customLog(statement: Message, lvl: number, extra?: MessageExtra, callback?: MessageCallback, localCallback?: () => void): void {
+  customLog(statement: Message, lvl: number, extra?: MessageExtra, callback?: MessageCallback, localCallback?: (message: Message) => void): void {
     try {
       if (EnvConstants.APP_ENV == 'local') {
         // eslint-disable-next-line no-console
         if (localCallback) {
-          localCallback();
+          localCallback(statement);
         } else {
           console.log(statement);
         }
