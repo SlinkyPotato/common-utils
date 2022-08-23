@@ -9,7 +9,7 @@ try {
   if (EnvConstants.GRAYLOG_HOST) {
     log.setConfig({
       fields: {
-        app: EnvConstants.APP_ENV,
+        app: EnvConstants.GRAYLOG_APP_NAME,
       },
       adapterName: EnvConstants.GRAYLOG_ADAPTER_NAME,
       adapterOptions: {
