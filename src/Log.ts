@@ -30,10 +30,22 @@ try {
 
 const Log = {
   
+  /**
+   * Local console.log
+   * @param statement
+   */
   console(statement: Message): void {
     console.log(statement);
   },
   
+  /**
+   * Log.customLog that allows for a combination of logging between local and gelf-pro
+   * @param statement
+   * @param lvl
+   * @param extra
+   * @param callback
+   * @param localCallback
+   */
   customLog(statement: Message, lvl: number, extra?: MessageExtra, callback?: MessageCallback, localCallback?: (message: Message) => void): void {
     try {
       if (EnvConstants.APP_ENV == 'local') {
@@ -52,42 +64,112 @@ const Log = {
     }
   },
   
+  /**
+   * Console.info
+   * level: 6
+   * @param statement
+   * @param extra
+   * @param callback
+   */
   info(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
     this.customLog(statement, 6, extra, callback, console.info);
   },
   
+  /**
+   * Console.warn
+   * level: 4
+   * @param statement
+   * @param extra
+   * @param callback
+   */
   warn(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
     this.customLog(statement, 4, extra, callback, console.warn);
   },
   
+  /**
+   * Console.debug
+   * level: 7
+   * @param statement
+   * @param extra
+   * @param callback
+   */
   debug(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
     this.customLog(statement, 7, extra, callback, console.debug);
   },
   
+  /**
+   * Console.error
+   * level: 3
+   * @param statement
+   * @param extra
+   * @param callback
+   */
   error(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
     this.customLog(statement, 3, extra, callback, console.error);
   },
   
+  /**
+   * Console.fatal
+   * level: 0
+   * @param statement
+   * @param extra
+   * @param callback
+   */
   fatal(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
     this.customLog(statement, 0, extra, callback, console.error);
   },
   
+  /**
+   * Console.emergency
+   * level: 0
+   * @param statement
+   * @param extra
+   * @param callback
+   */
   emergency(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
     this.customLog(statement, 0, extra, callback, console.error);
   },
   
+  /**
+   * Console.alert
+   * level: 1
+   * @param statement
+   * @param extra
+   * @param callback
+   */
   alert(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
     this.customLog(statement, 1, extra, callback, console.error);
   },
   
+  /**
+   * Console.critical
+   * level: 2
+   * @param statement
+   * @param extra
+   * @param callback
+   */
   critical(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
     this.customLog(statement, 2, extra, callback, console.error);
   },
   
+  /**
+   * Console.trace
+   * level: 7
+   * @param statement
+   * @param extra
+   * @param callback
+   */
   trace(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
     this.customLog(statement, 7, extra, callback);
   },
   
+  /**
+   * Console.notice
+   * level: 5
+   * @param statement
+   * @param extra
+   * @param callback
+   */
   notice(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
     this.customLog(statement, 5, extra, callback);
   },
