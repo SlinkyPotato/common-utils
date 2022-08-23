@@ -1,54 +1,56 @@
 import Log from '../Log';
-import logdna, { ConstructorOptions, Logger, LogOptions } from '@logdna/logger';
+import log, {
+  Message,
+} from 'gelf-pro';
 
 describe('Common Log ', () => {
-  let logdnaSpy: jest.SpyInstance;
+  let loggerSpy: jest.SpyInstance;
   
   beforeAll(() => {
-    logdnaSpy = jest.spyOn(logdna, 'createLogger');
-    logdnaSpy.mockImplementation((logToken: string, opts?: ConstructorOptions ) => {
-      console.log(`logToken: ${logToken}`);
-      console.log(opts);
+    loggerSpy = jest.spyOn(log, 'setConfig');
+    loggerSpy.mockImplementation(() => {
       return {
-        log: (statement: string | object) => {
+        notice: (statement: Message) => {
           console.log(statement);
         },
-        info(statement: string | object) {
+        info(statement: Message) {
           console.log(statement);
         },
-        warn(statement: string | object) {
+        warn(statement: Message) {
           console.log(statement);
         },
-        debug(statement: string | object) {
+        debug(statement: Message) {
           console.log(statement);
         },
-        error(statement: string | object, options?: Omit<LogOptions, 'level'>) {
-          console.log(statement);
-          console.log(options);
-        },
-        fatal(statement: string | object) {
+        error(statement: Message) {
           console.log(statement);
         },
-        trace(statement: string | object) {
+        fatal(statement: Message) {
           console.log(statement);
         },
-        addMetaProperty(key: string, value: unknown) {
-          console.log(key + value);
+        emergency(statement: Message) {
+          console.log(statement);
         },
-        flush() {
-          console.log('flushed');
+        alert(statement: Message) {
+          console.log(statement);
         },
-      } as Logger;
+        critical(statement: Message) {
+          console.log(statement);
+        },
+        trace(statement: Message) {
+          console.log(statement);
+        },
+      };
     });
   });
   
   afterAll(() => {
-    logdnaSpy.mockRestore();
+    loggerSpy.mockRestore();
   });
   
   test('Log.info', () => {
     const logSpy = jest.spyOn(Log, 'info');
-    const consoleSpy = jest.spyOn(console, 'log');
+    const consoleSpy = jest.spyOn(console, 'info');
     
     Log.info('test Log.info');
     
@@ -112,35 +114,15 @@ describe('Common Log ', () => {
     consoleSpy.mockClear();
   });
   
-  test('Log.log', () => {
-    const logSpy = jest.spyOn(Log, 'log');
+  test('Log.notice', () => {
+    const logSpy = jest.spyOn(Log, 'notice');
     const consoleSpy = jest.spyOn(console, 'log');
     
-    Log.log('test Log.log');
+    Log.notice('test Log.log');
     
     expect(logSpy).toHaveBeenCalledWith('test Log.log');
     expect(consoleSpy.mock.calls.length).toBe(1);
     consoleSpy.mockClear();
-  });
-  
-  test('Log.addMetaProperty', () => {
-    const logSpy = jest.spyOn(Log, 'addMetaProperty');
-    Log.addMetaProperty('testKey', 'testValue');
-    expect(logSpy).toHaveBeenCalledWith('testKey', 'testValue');
-    logSpy.mockClear();
-  });
-  
-  test('Log.removeMetaProperty', () => {
-    const logSpy = jest.spyOn(Log, 'removeMetaProperty');
-    Log.removeMetaProperty('testRemoveKey');
-    expect(logSpy).toHaveBeenCalledWith('testRemoveKey');
-  });
-  
-  test('Log.flush', () => {
-    const logSpy = jest.spyOn(Log, 'flush');
-    Log.flush();
-    expect(logSpy).toHaveBeenCalledWith();
-    logSpy.mockClear();
   });
 
 });
