@@ -4,19 +4,19 @@ import EnvConstants from '../EnvConstants';
 describe('environment variables', () => {
   
   test('constants.env', () => {
-    expect(EnvConstants.APP_ENV).toBe('jest');
+    expect(EnvConstants.APP_ENV).toBe('local');
   });
   
-  test('constants.logDNAToken', () => {
-    expect(EnvConstants.LOG_DNA_TOKEN).toBe('logDNAToken');
+  test('constants.GRAYLOG_HOST', () => {
+    expect(EnvConstants.GRAYLOG_HOST).toBe('graylogHost');
   });
   
-  test('constants.logDNAAppName', () => {
-    expect(EnvConstants.LOG_DNA_APP_NAME).toBe('logDNAAppName');
+  test('constants.GRAYLOG_PORT', () => {
+    expect(EnvConstants.GRAYLOG_PORT).toBe(0);
   });
   
-  test('constants.logDNADefault', () => {
-    expect(EnvConstants.LOG_DNA_DEFAULT).toBe('DEBUG');
+  test('constants.GRAYLOG_ADAPTER_NAME', () => {
+    expect(EnvConstants.GRAYLOG_ADAPTER_NAME).toBe('udp');
   });
   
   test('constants.sentryDSN', () => {

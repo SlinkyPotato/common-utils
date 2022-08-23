@@ -5,4 +5,3 @@
 <hr>
 
 A collection of common utilities for node project development.
-

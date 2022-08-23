@@ -1,28 +1,40 @@
-import { IsString, validateSync } from 'class-validator';
+import {
+  IsNumber,
+  IsString,
+  validateSync,
+} from 'class-validator';
+
+type EnvConstantsType = {
+  APP_ENV: string;
+  SENTRY_IO_DSN: string;
+  GRAYLOG_HOST: string;
+  GRAYLOG_PORT: number;
+  GRAYLOG_ADAPTER_NAME: 'tcp-tls' | 'tcp' | 'udp';
+}
 
 class EnvConstants {
     
     @IsString()
     APP_ENV: string;
-
-    @IsString()
-    LOG_DNA_APP_NAME: string;
     
     @IsString()
-    LOG_DNA_TOKEN: string;
+    GRAYLOG_HOST: string;
     
+    @IsNumber()
+    GRAYLOG_PORT: number;
+  
     @IsString()
-    LOG_DNA_DEFAULT: string;
+    GRAYLOG_ADAPTER_NAME: 'tcp-tls' | 'tcp' | 'udp';
     
     @IsString()
     SENTRY_IO_DSN: string;
     
     constructor(config: EnvConstantsType) {
       this.APP_ENV = config.APP_ENV;
-      this.LOG_DNA_APP_NAME = config.LOG_DNA_APP_NAME;
-      this.LOG_DNA_TOKEN = config.LOG_DNA_TOKEN;
       this.SENTRY_IO_DSN = config.SENTRY_IO_DSN;
-      this.LOG_DNA_DEFAULT = config.LOG_DNA_DEFAULT ?? 'info';
+      this.GRAYLOG_HOST = config.GRAYLOG_HOST;
+      this.GRAYLOG_PORT = config.GRAYLOG_PORT;
+      this.GRAYLOG_ADAPTER_NAME = config.GRAYLOG_ADAPTER_NAME;
       
       const errors = validateSync(this);
       errors.forEach((error) => {
@@ -37,16 +49,8 @@ class EnvConstants {
 
 export default new EnvConstants({
   APP_ENV: process.env.APP_ENV,
-  LOG_DNA_APP_NAME: process.env.LOG_DNA_APP_NAME,
-  LOG_DNA_TOKEN: process.env.LOG_DNA_TOKEN,
-  LOG_DNA_DEFAULT: process.env.LOG_DNA_DEFAULT,
   SENTRY_IO_DSN: process.env.SENTRY_IO_DSN,
+  GRAYLOG_HOST: process.env.GRAYLOG_HOST,
+  GRAYLOG_PORT: Number(process.env.GRAYLOG_PORT),
+  GRAYLOG_ADAPTER_NAME: process.env.GRAYLOG_ADAPTER_NAME,
 } as EnvConstantsType);
-
-type EnvConstantsType = {
-    APP_ENV: string;
-    LOG_DNA_APP_NAME: string;
-    LOG_DNA_TOKEN: string;
-    LOG_DNA_DEFAULT: string;
-    SENTRY_IO_DSN: string;
-}

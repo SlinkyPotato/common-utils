@@ -1,40 +1,46 @@
-import logdna, { Logger, LogOptions } from '@logdna/logger';
 import EnvConstants from './EnvConstants';
-
-let logger: Logger | null;
+import log, {
+  Message,
+  MessageCallback,
+  MessageExtra,
+} from 'gelf-pro';
 
 try {
-  if (EnvConstants.LOG_DNA_TOKEN) {
-    logger = logdna.createLogger(EnvConstants.LOG_DNA_TOKEN, {
-      app: EnvConstants.LOG_DNA_APP_NAME,
-      level: EnvConstants.LOG_DNA_DEFAULT,
+  if (EnvConstants.GRAYLOG_HOST) {
+    log.setConfig({
+      adapterName: EnvConstants.GRAYLOG_ADAPTER_NAME,
+      adapterOptions: {
+        host: EnvConstants.GRAYLOG_HOST,
+        port: EnvConstants.GRAYLOG_PORT,
+      },
     });
-    if (EnvConstants.APP_ENV != 'production' || !logger.info) {
+    
+    if (EnvConstants.APP_ENV == 'local') {
       // eslint-disable-next-line no-console
       console.log('Logger initialized!');
     } else {
-      logger.log('Logger initialized!');
+      log.message('Logger initialized!', 6);
     }
-  } else {
-    logger = null;
   }
 } catch (e) {
   // eslint-disable-next-line no-console
   console.error(e);
-  throw new Error('Please setup valid LogDNA tokens.');
+  throw new Error('Please setup a valid logging tool.');
 }
 
 const Log = {
   
-  logger: logger,
-  
-  info(statement: string | object, options?: Omit<LogOptions, 'level'>): void {
+  customLog(statement: Message, lvl: number, extra?: MessageExtra, callback?: MessageCallback, localCallback?: () => void): void {
     try {
-      if (EnvConstants.APP_ENV != 'production' || !logger || !logger.info) {
+      if (EnvConstants.APP_ENV == 'local') {
         // eslint-disable-next-line no-console
-        console.log(statement);
+        if (localCallback) {
+          localCallback();
+        } else {
+          console.log(statement);
+        }
       } else {
-        logger.info(statement, options);
+        log.message(statement, lvl, extra, callback);
       }
     } catch (e) {
       // eslint-disable-next-line no-console
@@ -42,121 +48,44 @@ const Log = {
     }
   },
   
-  warn(statement: string | object, options?: Omit<LogOptions, 'level'>): void {
-    try {
-      if (EnvConstants.APP_ENV != 'production' || !logger || !logger.warn) {
-        // eslint-disable-next-line no-console
-        console.warn(statement);
-      } else {
-        logger.warn(statement, options);
-      }
-    } catch (e) {
-      // eslint-disable-next-line no-console
-      console.error(e);
-    }
+  info(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
+    this.customLog(statement, 6, extra, callback, console.info);
   },
   
-  debug(statement: string | object, options?: Omit<LogOptions, 'level'>): void {
-    try {
-      if (EnvConstants.APP_ENV != 'production' || !logger || !logger.debug) {
-        // eslint-disable-next-line no-console
-        console.debug(statement);
-      } else {
-        logger.debug(statement, options);
-      }
-    } catch (e) {
-      // eslint-disable-next-line no-console
-      console.error(e);
-    }
+  warn(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
+    this.customLog(statement, 4, extra, callback, console.warn);
   },
   
-  error(statement: string | object, options?: Omit<LogOptions, 'level'>): void {
-    try {
-      if (EnvConstants.APP_ENV != 'production' || !logger || !logger.error) {
-        // eslint-disable-next-line no-console
-        console.error(statement);
-      } else {
-        logger.error(statement, options);
-      }
-    } catch (e) {
-      // eslint-disable-next-line no-console
-      console.error(e);
-    }
+  debug(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
+    this.customLog(statement, 7, extra, callback, console.debug);
   },
   
-  fatal(statement: string | object, options?: Omit<LogOptions, 'level'>): void {
-    try {
-      if (EnvConstants.APP_ENV != 'production' || !logger || !logger.fatal) {
-        // eslint-disable-next-line no-console
-        console.error(statement);
-      } else {
-        logger.fatal(statement, options);
-      }
-    } catch (e) {
-      // eslint-disable-next-line no-console
-      console.error(e);
-    }
+  error(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
+    this.customLog(statement, 3, extra, callback, console.error);
   },
   
-  trace(statement: string | object, options?: Omit<LogOptions, 'level'>): void {
-    try {
-      if (EnvConstants.APP_ENV != 'production' || !logger || !logger.trace) {
-        // eslint-disable-next-line no-console
-        console.log(statement);
-      } else {
-        logger.trace(statement, options);
-      }
-    } catch (e) {
-      // eslint-disable-next-line no-console
-      console.error(e);
-    }
+  fatal(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
+    this.customLog(statement, 0, extra, callback, console.error);
   },
   
-  log(statement: string | object, options?: Omit<LogOptions, 'level'>): void {
-    try {
-      if (EnvConstants.APP_ENV != 'production' || !logger) {
-        // eslint-disable-next-line no-console
-        console.log(statement);
-      } else {
-        logger.log(statement, options);
-      }
-    } catch (e) {
-      // eslint-disable-next-line no-console
-      console.error(e);
-    }
+  emergency(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
+    this.customLog(statement, 0, extra, callback, console.error);
   },
   
-  addMetaProperty(key: string, value: string | number | boolean | object): void {
-    try {
-      if (logger) {
-        logger.addMetaProperty(key, value);
-      }
-    } catch (e) {
-      // eslint-disable-next-line no-console
-      console.error(e);
-    }
+  alert(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
+    this.customLog(statement, 1, extra, callback, console.error);
   },
   
-  removeMetaProperty(key: string): void {
-    try {
-      if (logger) {
-        logger.removeMetaProperty(key);
-      }
-    } catch (e) {
-      // eslint-disable-next-line no-console
-      console.error(e);
-    }
+  critical(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
+    this.customLog(statement, 2, extra, callback, console.error);
   },
   
-  flush(): void {
-    try {
-      if (logger) {
-        logger.flush();
-      }
-    } catch(e) {
-      // eslint-disable-next-line no-console
-      console.error(e);
-    }
+  trace(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
+    this.customLog(statement, 7, extra, callback);
+  },
+  
+  notice(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
+    this.customLog(statement, 5, extra, callback);
   },
 };
 
