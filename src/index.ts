@@ -1,13 +1,11 @@
 import Log from './Log';
 import LogUtils from './LogUtils';
 import SentryUtils, { command, message_event } from './SentryUtils';
-import { LogOptions } from '@logdna/logger';
 import EnvConstants from './EnvConstants';
 import ChainListIds from './constants/ChainListIds';
 import Validate from './Validate';
 import ValidationError from './errors/ValidationError';
 
-export { LogOptions };
 
 // SentryUtils
 export {

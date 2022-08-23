@@ -7,8 +7,8 @@ module.exports = {
 /**
  * Environment Variables Test
  */
-process.env.APP_ENV = 'jest';
-process.env.LOG_DNA_TOKEN = 'logDNAToken';
-process.env.LOG_DNA_APP_NAME = 'logDNAAppName';
-process.env.LOG_DNA_DEFAULT = 'DEBUG';
+process.env.APP_ENV = 'local';
 process.env.SENTRY_IO_DSN = 'sentryDSN';
+process.env.GRAYLOG_HOST = 'graylogHost';
+process.env.GRAYLOG_PORT = 0;
+process.env.GRAYLOG_ADAPTER_NAME = 'udp';
