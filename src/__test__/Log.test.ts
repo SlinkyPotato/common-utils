@@ -48,6 +48,17 @@ describe('Common Log ', () => {
     loggerSpy.mockRestore();
   });
   
+  test('Log.console', () => {
+    const logSpy = jest.spyOn(Log, 'console');
+    const consoleSpy = jest.spyOn(console, 'log');
+    
+    Log.console('test Log.console');
+    
+    expect(logSpy).toHaveBeenCalledWith('test Log.console');
+    expect(consoleSpy.mock.calls.length).toBe(1);
+    consoleSpy.mockClear();
+  });
+  
   test('Log.info', () => {
     const logSpy = jest.spyOn(Log, 'info');
     const consoleSpy = jest.spyOn(console, 'info');

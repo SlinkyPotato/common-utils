@@ -30,6 +30,10 @@ try {
 
 const Log = {
   
+  console(statement: Message): void {
+    console.log(statement);
+  },
+  
   customLog(statement: Message, lvl: number, extra?: MessageExtra, callback?: MessageCallback, localCallback?: (message: Message) => void): void {
     try {
       if (EnvConstants.APP_ENV == 'local') {
