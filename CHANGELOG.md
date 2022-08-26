@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file.
 4. Add comments to Log methods (RC4)
 5. Add GRAYLOG_APP_NAME (RC5)
 6. Fix GRAYLOG_APP_NAME (RC6)
+7. Add build-test.yml
 
 ## [1.3.1](https://github.com/degen-workgroup/common-utils/compare/v1.3.0...v1.3.1) (2022-07-18)
 
