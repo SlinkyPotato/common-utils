@@ -14,6 +14,7 @@ All notable changes to this project will be documented in this file.
 5. Add GRAYLOG_APP_NAME (RC5)
 6. Fix GRAYLOG_APP_NAME (RC6)
 7. Add build-test.yml
+8. Upgrade eslint to fix lint issue
 
 ## [1.3.1](https://github.com/degen-workgroup/common-utils/compare/v1.3.0...v1.3.1) (2022-07-18)
 
