@@ -75,7 +75,7 @@ const Log = {
    * @param callback
    */
   info(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
-    this.customLog(statement, 6, extra, callback, console.info);
+    Log.customLog(statement, 6, extra, callback, console.info);
   },
   
   /**
@@ -86,7 +86,7 @@ const Log = {
    * @param callback
    */
   warn(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
-    this.customLog(statement, 4, extra, callback, console.warn);
+    Log.customLog(statement, 4, extra, callback, console.warn);
   },
   
   /**
@@ -97,7 +97,7 @@ const Log = {
    * @param callback
    */
   debug(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
-    this.customLog(statement, 7, extra, callback, console.debug);
+    Log.customLog(statement, 7, extra, callback, console.debug);
   },
   
   /**
@@ -108,7 +108,7 @@ const Log = {
    * @param callback
    */
   error(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
-    this.customLog(statement, 3, extra, callback, console.error);
+    Log.customLog(statement, 3, extra, callback, console.error);
   },
   
   /**
@@ -119,7 +119,7 @@ const Log = {
    * @param callback
    */
   fatal(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
-    this.customLog(statement, 0, extra, callback, console.error);
+    Log.customLog(statement, 0, extra, callback, console.error);
   },
   
   /**
@@ -130,7 +130,7 @@ const Log = {
    * @param callback
    */
   emergency(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
-    this.customLog(statement, 0, extra, callback, console.error);
+    Log.customLog(statement, 0, extra, callback, console.error);
   },
   
   /**
@@ -141,7 +141,7 @@ const Log = {
    * @param callback
    */
   alert(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
-    this.customLog(statement, 1, extra, callback, console.error);
+    Log.customLog(statement, 1, extra, callback, console.error);
   },
   
   /**
@@ -152,7 +152,7 @@ const Log = {
    * @param callback
    */
   critical(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
-    this.customLog(statement, 2, extra, callback, console.error);
+    Log.customLog(statement, 2, extra, callback, console.error);
   },
   
   /**
@@ -163,7 +163,7 @@ const Log = {
    * @param callback
    */
   trace(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
-    this.customLog(statement, 7, extra, callback);
+    Log.customLog(statement, 7, extra, callback);
   },
   
   /**
@@ -174,7 +174,7 @@ const Log = {
    * @param callback
    */
   notice(statement: Message, extra?: MessageExtra, callback?: MessageCallback): void {
-    this.customLog(statement, 5, extra, callback);
+    Log.customLog(statement, 5, extra, callback);
   },
 };
 
