@@ -17,13 +17,12 @@ try {
         port: EnvConstants.GRAYLOG_PORT,
       },
     });
-    
-    if (EnvConstants.APP_ENV == 'local') {
-      // eslint-disable-next-line no-console
-      console.log('Logger initialized!');
-    } else {
-      log.message('Logger initialized!', 6);
-    }
+    log.message('Logger initialized!', 6);
+  }
+  // default logging to console
+  if (!EnvConstants.LOG_TO_CONSOLE) {
+    // eslint-disable-next-line no-console
+    console.log('Logger initialized!');
   }
 } catch (e) {
   // eslint-disable-next-line no-console

@@ -7,10 +7,11 @@ import {
 type EnvConstantsType = {
   APP_ENV: string;
   SENTRY_IO_DSN: string;
-  GRAYLOG_HOST: string;
-  GRAYLOG_PORT: number;
-  GRAYLOG_ADAPTER_NAME: 'tcp-tls' | 'tcp' | 'udp';
-  GRAYLOG_APP_NAME: string;
+  GRAYLOG_HOST: string | undefined;
+  GRAYLOG_PORT: number | undefined;
+  GRAYLOG_ADAPTER_NAME: 'tcp-tls' | 'tcp' | 'udp' | undefined;
+  GRAYLOG_APP_NAME: string | undefined;
+  LOG_TO_CONSOLE: boolean | undefined;
 }
 
 class EnvConstants {
@@ -19,27 +20,27 @@ class EnvConstants {
     APP_ENV: string;
     
     @IsString()
-    GRAYLOG_HOST: string;
+    GRAYLOG_HOST: string | undefined;
     
     @IsNumber()
-    GRAYLOG_PORT: number;
+    GRAYLOG_PORT: number | undefined;
   
     @IsString()
-    GRAYLOG_ADAPTER_NAME: 'tcp-tls' | 'tcp' | 'udp';
+    GRAYLOG_ADAPTER_NAME: 'tcp-tls' | 'tcp' | 'udp' | undefined;
     
     @IsString()
-    GRAYLOG_APP_NAME: string;
+    GRAYLOG_APP_NAME: string | undefined;
     
     @IsString()
     SENTRY_IO_DSN: string;
     
+    @IsString()
+    LOG_TO_CONSOLE: boolean | undefined;
+    
     constructor(config: EnvConstantsType) {
       this.APP_ENV = config.APP_ENV;
       this.SENTRY_IO_DSN = config.SENTRY_IO_DSN;
-      this.GRAYLOG_HOST = config.GRAYLOG_HOST;
-      this.GRAYLOG_PORT = config.GRAYLOG_PORT;
-      this.GRAYLOG_ADAPTER_NAME = config.GRAYLOG_ADAPTER_NAME;
-      this.GRAYLOG_APP_NAME = config.GRAYLOG_APP_NAME;
+      this.LOG_TO_CONSOLE = config.LOG_TO_CONSOLE;
       
       const errors = validateSync(this);
       errors.forEach((error) => {
@@ -59,4 +60,5 @@ export default new EnvConstants({
   GRAYLOG_PORT: Number(process.env.GRAYLOG_PORT),
   GRAYLOG_ADAPTER_NAME: process.env.GRAYLOG_ADAPTER_NAME,
   GRAYLOG_APP_NAME: process.env.GRAYLOG_APP_NAME,
+  LOG_TO_CONSOLE: process.env.LOG_TO_CONSOLE,
 } as EnvConstantsType);
