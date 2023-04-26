@@ -50,7 +50,7 @@ const Log = {
    */
   customLog(statement: Message, lvl: number, extra?: MessageExtra, callback?: MessageCallback, localCallback?: (message: Message) => void): void {
     try {
-      if (EnvConstants.APP_ENV == 'local') {
+      if (!EnvConstants.LOG_TO_CONSOLE) {
         // eslint-disable-next-line no-console
         if (localCallback) {
           localCallback(statement);
