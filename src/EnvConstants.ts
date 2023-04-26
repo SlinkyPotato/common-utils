@@ -21,16 +21,20 @@ class EnvConstants {
     
     @IsString()
     APP_ENV: string;
-    
+  
+    @IsOptional()
     @IsString()
     GRAYLOG_HOST: string | undefined;
-    
+  
+    @IsOptional()
     @IsNumber()
     GRAYLOG_PORT: number | undefined;
   
+    @IsOptional()
     @IsString()
     GRAYLOG_ADAPTER_NAME: 'tcp-tls' | 'tcp' | 'udp' | undefined;
-    
+  
+    @IsOptional()
     @IsString()
     GRAYLOG_APP_NAME: string | undefined;
     
